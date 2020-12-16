@@ -18,13 +18,13 @@ def get_cloud_provider():
 
 print('Iniciando')
 
-
 cloud_provider = get_cloud_provider()
 
 cloud_provider.configure()
 
-# rodar o terraform tambem por cloud
+# cloud_provider.terraform_apply()
 
-# rodar o kubectl
+cloud_provider.kubernetes_apply(".")
+
 
 

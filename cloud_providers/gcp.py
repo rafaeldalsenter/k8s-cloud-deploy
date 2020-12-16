@@ -27,4 +27,4 @@ class Gcp(CloudProvider):
 
     def kubernetes_apply(self, dir):
         subprocess.run(["gcloud", "container", "clusters", "get-credentials", "%s-gke" % self.__id_project, "--region", "%s" % self.__region, "--project", "%s" % self.__id_project])
-        subprocess.run(["kubectl", "apply", "-f", "kubernetes/", "--recursive"], cwd=dir)
+        subprocess.run(["kubectl", "apply", "-f", dir, "--recursive"])
