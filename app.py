@@ -15,16 +15,13 @@ def get_cloud_provider():
 
     raise Exception(f"The CLOUD environment variable (value: {cloud_env}) is not recognized")
 
-
-print('Iniciando')
-
 cloud_provider = get_cloud_provider()
 
 cloud_provider.configure()
-
-# cloud_provider.terraform_apply()
-
+cloud_provider.terraform_apply()
 cloud_provider.kubernetes_apply(".")
+
+print('\033[92mSuccess :)')
 
 
 
