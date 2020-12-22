@@ -4,8 +4,8 @@ from cloud_providers.gcp import Gcp
 def get_cloud_provider():
     cloud_env = os.getenv('CLOUD')
 
-    if(cloud_env == 'azure'):
-        return Azure()
+    if(cloud_env == 'gcp'):
+        return Gcp()
 
     raise Exception(f"The CLOUD environment variable (value: {cloud_env}) is not implemented")
 
