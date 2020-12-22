@@ -16,7 +16,6 @@ class Gcp(CloudProvider):
     def configure(self):
         subprocess.run(["gcloud", "config", "set", "project", self.__id_project], check=True)
         subprocess.run(["gcloud", "auth", "activate-service-account", "--key-file", self.__key_file], check=True)
-        subprocess.run(["gcloud", "services", "enable", "containerregistry.googleapis.com"], check=True)
         subprocess.run(["gcloud", "services", "enable", "compute.googleapis.com"], check=True)
         subprocess.run(["gcloud", "services", "enable", "container.googleapis.com"], check=True)
 
