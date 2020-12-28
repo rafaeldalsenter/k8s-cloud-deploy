@@ -14,5 +14,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          repository: rafaeldalsenter/k8s-multicloud-deploy
+          repository: rafaeldalsenter/k8s-cloud-deploy
           tag_with_ref: true
