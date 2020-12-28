@@ -8,8 +8,18 @@ Application that creates and configures K8s cloud environment:
 
 Prerequisites:
 - K8s files.
-- CREDENTIALS.json, created by service acconunt key from GCP.
+- CREDENTIALS.json, created by [service account](https://cloud.google.com/iam/docs/service-accounts) key from GCP.
 
+This image must be used as an "image-base" to generate a new image containing the prerequisite files.
 
-Para GCP:
-docker run --env PROJECT_ID=teste-multicloud --env REGION=us-west1 --env CLOUD=gcp rafaeldalsenter/k8s-multicloud-deploy
+Example of use:
+
+```dockerfile
+FROM rafaeldalsenter/k8s-cloud-deploy
+
+ENV PROJECT_ID=test-project
+ENV REGION=us-west1
+ENV CLOUD=gcp
+
+COPY . ./
+```
